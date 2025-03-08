@@ -22,8 +22,8 @@ function activate(context) {
             
             // Get user-specified exclusions
             const config = vscode.workspace.getConfiguration('fileCopier');
-            let excludedFolders = config.get('excludedFolders', ['node_modules', '.git', '.vscode']);
-            let excludedPatterns = config.get('excludedPatterns', ['*.exe', '*.dll', '*.jpg', '*.png', '*.pdf']);
+            let excludedFolders = config.get('excludedFolders', ['node_modules', '.git', '.vscode', '.next', '.vscode']);
+            let excludedPatterns = config.get('excludedPatterns', ['*.exe', '*.dll', '*.jpg', '*.png', '*.pdf', '*.png', '*.jpeg', '*.avif', '*.webp', '*.mp3', '*.wav', '*.mp4', '*.docx', '*.ico', '*.vsix', '*.gitignore', "*.env", '*.json']);
             
             // First, ask about folder exclusions
             const modifyFolderExcludes = await vscode.window.showQuickPick(['Yes', 'No'], {
